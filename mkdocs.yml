@@ -21,7 +21,7 @@ nav:
       - How to clone a GitLab repository with SSH: how/gitlab-repo-ssh.md
   - Glider Data Pipeline V1:
       - Overview: gdp/gdp.md
-      - Class Diagram: gdp/gdp-class-diagram.md
+      - Class Diagram: gdp/overall_class_diagram.md
 
 plugins:
   - search
