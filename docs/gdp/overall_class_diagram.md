@@ -1,3 +1,7 @@
+---
+title: Overall Class Diagram
+---
+
 ### Mermaid Class/Object Diagram — Key Relationships
 
 Below is a `classDiagram` capturing the core classes, inheritance, and the most important associations across
@@ -9,132 +13,132 @@ classDiagram
 %% =======================
 %% High-level Orchestration
 %% =======================
-  class GliderPipelineManager {
-    - glider_type: str
-    - options: dict
-    + run(): void
-    + get_missions(): list[BaseMission]
-    + get_mission_runner(missions): MissionRunner
-    + update_from_sensor_tracker(): void
-  }
+    class GliderPipelineManager {
+        - glider_type: str
+        - options: dict
+        + run(): void
+        + get_missions(): list[BaseMission]
+        + get_mission_runner(missions): MissionRunner
+        + update_from_sensor_tracker(): void
+    }
 
-  class MissionRunnerFactory {
-    - missions: list[BaseMission]
-    + build(): MissionRunner
-  }
+    class MissionRunnerFactory {
+        - missions: list[BaseMission]
+        + build(): MissionRunner
+    }
 
-  class MissionRunner {
-    - missions: list[BaseMission]
-    + run(): void
-    + raise_error(): void
-    + should_break(): bool
-    + mission_summary(): str
-  }
+    class MissionRunner {
+        - missions: list[BaseMission]
+        + run(): void
+        + raise_error(): void
+        + should_break(): bool
+        + mission_summary(): str
+    }
 
-  class AutoDelayedModeMissionProcessRunner {
-    + should_break(): bool
-  }
+    class AutoDelayedModeMissionProcessRunner {
+        + should_break(): bool
+    }
 
-  class SlocumMissionRunner {
-    + run(): void
-  }
+    class SlocumMissionRunner {
+        + run(): void
+    }
 
-  class SlocumAutoDelayedModeMissionProcessRunner {
-    + should_break(): bool
-  }
+    class SlocumAutoDelayedModeMissionProcessRunner {
+        + should_break(): bool
+    }
 
-  class WaveMissionRunner {
-    + run(): void
-  }
+    class WaveMissionRunner {
+        + run(): void
+    }
 
-  GliderPipelineManager --> MissionRunnerFactory: uses
-  MissionRunnerFactory --> MissionRunner: builds
-  AutoDelayedModeMissionProcessRunner --|> MissionRunner
-  SlocumMissionRunner --|> MissionRunner
-  SlocumAutoDelayedModeMissionProcessRunner --|> SlocumMissionRunner
-  WaveMissionRunner --|> MissionRunner
+    GliderPipelineManager --> MissionRunnerFactory: uses
+    MissionRunnerFactory --> MissionRunner: builds
+    AutoDelayedModeMissionProcessRunner --|> MissionRunner
+    SlocumMissionRunner --|> MissionRunner
+    SlocumAutoDelayedModeMissionProcessRunner --|> SlocumMissionRunner
+    WaveMissionRunner --|> MissionRunner
 %% =======================
 %% Missions & Builders
 %% =======================
-  class BaseMissionBuilder {
-    <<abstract>>
-    - options: dict
-    - command: any
-    - missions: list[BaseMission]
-    + build(): list[BaseMission]
-    + get_selected_mission_list(): QuerySet[Mission]
-    + process_builder_list(): list[BaseProcessBuilder]
-    + build_command(): Command
-  }
+    class BaseMissionBuilder {
+        <<abstract>>
+        - options: dict
+        - command: any
+        - missions: list[BaseMission]
+        + build(): list[BaseMission]
+        + get_selected_mission_list(): QuerySet[Mission]
+        + process_builder_list(): list[BaseProcessBuilder]
+        + build_command(): Command
+    }
 
-  class SlocumMissionBuilder {
-    + GLIDER_TYPE = "slocum"
-  }
+    class SlocumMissionBuilder {
+        + GLIDER_TYPE = "slocum"
+    }
 
-  class WaveMissionBuilder {
-    + GLIDER_TYPE = "wave"
-  }
+    class WaveMissionBuilder {
+        + GLIDER_TYPE = "wave"
+    }
 
-  BaseMissionBuilder <|-- SlocumMissionBuilder
-  BaseMissionBuilder <|-- WaveMissionBuilder
+    BaseMissionBuilder <|-- SlocumMissionBuilder
+    BaseMissionBuilder <|-- WaveMissionBuilder
 
-  class BaseMission {
-    - mission_dict: dict
-    - command: Command
-    - builders: list[BaseProcessBuilder]
-  }
+    class BaseMission {
+        - mission_dict: dict
+        - command: Command
+        - builders: list[BaseProcessBuilder]
+    }
 
-  BaseMissionBuilder --> BaseMission: creates
-  BaseMissionBuilder --> CommandFactory: uses
+    BaseMissionBuilder --> BaseMission: creates
+    BaseMissionBuilder --> CommandFactory: uses
 %% =======================
 %% Process Builders & Steps
 %% =======================
-  class BaseProcessBuilder {
-    <<abstract>>
-    - mission_dict: dict
-    - command: Command
-    - step_manager: BaseStepManager
-    + build(): void
-    + add_step(handler): void
-    + add_step_generator(gen): void
-  }
+    class BaseProcessBuilder {
+        <<abstract>>
+        - mission_dict: dict
+        - command: Command
+        - step_manager: BaseStepManager
+        + build(): void
+        + add_step(handler): void
+        + add_step_generator(gen): void
+    }
 
-  class BeforeSlocumProcessBuilder
-  class SlocumProcessBuilder
-  class AfterProcessBuilder
+    class BeforeSlocumProcessBuilder
+    class SlocumProcessBuilder
+    class AfterProcessBuilder
 
-  BaseProcessBuilder <|-- BeforeSlocumProcessBuilder
-  BaseProcessBuilder <|-- SlocumProcessBuilder
-  BaseProcessBuilder <|-- AfterProcessBuilder
-  BaseMission o-- BaseProcessBuilder: has many
-  BaseProcessBuilder --> BaseStepManager: delegates to
+    BaseProcessBuilder <|-- BeforeSlocumProcessBuilder
+    BaseProcessBuilder <|-- SlocumProcessBuilder
+    BaseProcessBuilder <|-- AfterProcessBuilder
+    BaseMission o-- BaseProcessBuilder: has many
+    BaseProcessBuilder --> BaseStepManager: delegates to
 
-  class BaseStepManager {
-    + run(steps): void
-  }
+    class BaseStepManager {
+        + run(steps): void
+    }
 
 %% Representative contrib handlers (objects invoked by builders)
-  class LocalDirectoriesCreationHandler
-  class SlocumProcessorHandler
-  class FileCleaningHandler
-  class ErddapDatasetConfigHandler
-  class ErddapDataUploadHandler
-  class MetaGenerationHandler
+    class LocalDirectoriesCreationHandler
+    class SlocumProcessorHandler
+    class FileCleaningHandler
+    class ErddapDatasetConfigHandler
+    class ErddapDataUploadHandler
+    class MetaGenerationHandler
 
-  BeforeSlocumProcessBuilder --> LocalDirectoriesCreationHandler: adds step
-  SlocumProcessBuilder --> SlocumProcessorHandler: adds step
-  AfterProcessBuilder --> FileCleaningHandler: adds step
-  AfterProcessBuilder --> ErddapDatasetConfigHandler: adds step
-  AfterProcessBuilder --> ErddapDataUploadHandler: optional step
-  AfterProcessBuilder --> MetaGenerationHandler: adds step
+    BeforeSlocumProcessBuilder --> LocalDirectoriesCreationHandler: adds step
+    SlocumProcessBuilder --> SlocumProcessorHandler: adds step
+    AfterProcessBuilder --> FileCleaningHandler: adds step
+    AfterProcessBuilder --> ErddapDatasetConfigHandler: adds step
+    AfterProcessBuilder --> ErddapDataUploadHandler: optional step
+    AfterProcessBuilder --> MetaGenerationHandler: adds step
 %% =======================
 %% Commands, Components & Models
 %% =======================
-  class CommandFactory {
-    + generate(options, glider_type): Command
-  }
+    class CommandFactory {
+        + generate(options, glider_type): Command
+    }
 
-  class Command {
+    class Command {
 <<interface/placeholder>>
 + options: dict
 }

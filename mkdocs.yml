@@ -19,7 +19,9 @@ nav:
   - How-to Guides:
       - How to generate an SSH key pair: how/ssh-key.md
       - How to clone a GitLab repository with SSH: how/gitlab-repo-ssh.md
-  - Glider Data Pipeline V1: gdp/gdp.md
+  - Glider Data Pipeline V1:
+      - Overview: gdp/gdp.md
+      - Class Diagram: gdp/gdp-class-diagram.md
 
 plugins:
   - search
