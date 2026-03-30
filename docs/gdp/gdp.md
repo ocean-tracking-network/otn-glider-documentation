@@ -13,7 +13,7 @@ products and ERDDAP publication.
 
 GDP is a Django‑based, command‑line pipeline that:
 
-- Discovers and selects Slocum (and Wave) missions from a database synchronized with a Sensor Tracker.
+- Discovers and selects Slocum (and Wave) missions from a database synchronized with Sensor Tracker APIs.
 - Builds a mission‑specific process plan using modular step builders.
 - Executes pre‑processing (e.g., directory setup), core processing (e.g., Slocum ASCII/BIN processing), and
   post‑processing (e.g., cleanup, ERDDAP config generation, and upload).
@@ -53,7 +53,7 @@ python manage.py slocum_run -ml 136 -a --delayed
 - Contrib Step Implementations: `gdp/contrib/step_implementation/*`
 - Engines (algorithms and adapters): `gdp/engine/slocum/*`, `gdp/engine/wave/*`
 
-#### Mermaid: High‑Level System Architecture
+#### High‑Level System Architecture
 
 ```mermaid
 flowchart LR
@@ -116,7 +116,7 @@ flowchart LR
         - ERDDAP upload: `gdp/contrib/step_implementation/errdap_data_file_upload/*`
         - Optional backup of ERDDAP files: `gdp/contrib/step_implementation/backup_erddap_files/*`
 
-#### Mermaid: Sequence of a Typical Slocum Delayed Run
+#### Sequence of a Typical Slocum Delayed Run
 
 ```mermaid
 sequenceDiagram
@@ -313,7 +313,7 @@ Behavior:
 
 ---
 
-### Mermaid: Data Products Lifecycle
+### Data Products Lifecycle
 
 ```mermaid
 stateDiagram-v2
