@@ -5,8 +5,7 @@ title: Glider Data Pipeline (GDP) — Comprehensive Overview
 ### Glider Data Pipeline (GDP) — Comprehensive Overview
 
 This document provides a high‑level and practical overview of the Glider Data Pipeline (GDP) from command entry to data
-products and ERDDAP publication. It is written for GitHub Pages and includes Mermaid diagrams you can render on your
-site.
+products and ERDDAP publication.
 
 ---
 
@@ -17,7 +16,7 @@ GDP is a Django‑based, command‑line pipeline that:
 - Discovers and selects Slocum (and Wave) missions from a database synchronized with a Sensor Tracker.
 - Builds a mission‑specific process plan using modular step builders.
 - Executes pre‑processing (e.g., directory setup), core processing (e.g., Slocum ASCII/BIN processing), and
-  post‑processing (e.g., cleanup, ERDDAP config generation and upload).
+  post‑processing (e.g., cleanup, ERDDAP config generation, and upload).
 - Produces validated NetCDF datasets, metadata artifacts, and ERDDAP dataset configurations.
 - Supports real‑time and delayed modes, selective reprocessing, and Slack notifications.
 
@@ -88,7 +87,7 @@ flowchart LR
 2. Pipeline bootstrap (`gdp/core/pipeline/manager.py`)
     - Syncs local Mission table from Sensor Tracker via `gdp.component.stp.get_glider_deployment()` and
       `Mission.update_or_create_from_dict(...)`
-    - Resolves a mission builder based on glider type
+    - Resolves a mission builder based on a glider type
     - Gets selected missions from DB according to options (real‑time current, latest delayed, or explicit list)
     - Creates a MissionRunner for these missions and executes it
 
@@ -148,7 +147,7 @@ sequenceDiagram
 ### Major Components and Responsibilities
 
 - Management Commands
-    - `slocum_run.py`: Parses options, initializes pipeline, controls mission selection mode, timing, and overall run
+    - `slocum_run.py`: Parses options, initializes a pipeline, controls mission selection mode, timing, and overall run
       reporting.
 
 - Pipeline Manager (`gdp/core/pipeline/manager.py`)
@@ -268,7 +267,7 @@ Commonly used:
 - Add a new step
     - Implement in `gdp/contrib/step_implementation/<your_step>/...`
     - Expose a factory or handler compatible with existing step handler interfaces
-    - Register in appropriate builder (`Before*`, `Process*`, `After*`) via the step handler lists
+    - Register in the appropriate builder (`Before*`, `Process*`, `After*`) via the step handler lists
 
 - Add a new mission type
     - Create a `*MissionBuilder` with `GLIDER_TYPE` and override `process_builder_list()`
@@ -336,6 +335,3 @@ stateDiagram-v2
 - Keep `--resource_dir` and `--output_dir` explicit for reproducibility
 - For bulk historical processing, prefer `--process_delayed_mission` with an explicit `-ml` list or range
 - Ensure ERDDAP server paths and permissions are configured before enabling `--upload`
-
-If you’d like, I can tailor this to your site’s navigation and add links to your exact ERDDAP instance, data
-dictionaries, and operational runbooks.
