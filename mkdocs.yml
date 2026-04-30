@@ -29,7 +29,8 @@ nav:
       - Delayed Mission Flow: gdp/delayed_flow.md
       - Database and External Interfaces: gdp/database_and_api.md
       - Metadata in GDP: gdp/meta_data_netcdf.md
-      - ERDDAP xml: gdp/erddap_xml.md
+      - ERDDAP XML: gdp/erddap_xml.md
+      - External XML Join Script: gdp/external_dataset_xml_join.md
       - Customized GUTILS: gdp/customized_gutils.md
 
 plugins:
