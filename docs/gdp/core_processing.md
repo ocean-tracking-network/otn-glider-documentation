@@ -2,7 +2,7 @@
 
 This document provides an in‑depth, implementation‑oriented overview of GDP’s core processing stage. It explains how
 steps are assembled and executed, what the factories and handlers do, where inputs/outputs live, and how errors and
-persistence are handled. It includes Mermaid diagrams suitable for GitHub Pages.
+persistence are handled.
 
 ---
 
