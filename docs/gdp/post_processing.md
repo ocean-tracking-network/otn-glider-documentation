@@ -316,14 +316,14 @@ already‑absent files).
 
 ### Extending Post‑Processing
 
-1) Add a new step:
+- Add a new step:
     - Implement a Factory + Step under `gdp/contrib/step_implementation/<your_feature>/...`
     - Create a `StepHandler` in `after_process_step_handlers.py` with `FACTORY_CLASS = YourFactory`
     - Append it to `handler_list` in correct order (e.g., before cleanup, before notifications)
-2) Customize ERDDAP XML generation:
+- Customize ERDDAP XML generation:
     - Modify factories and refine passes under `.../errdap_dataset_config/factory`
     - Update test resources in `.../tests/**/resource` and validate on a staging ERDDAP
-3) Alter housekeeping policy:
+- Alter housekeeping policy:
     - Adjust `SlocumAfterProcessFilesCleaningFactory` behavior or make it flag‑sensitive via `command.options`
 
 ---
