@@ -33,6 +33,7 @@ nav:
       - External XML Join Script: gdp/erddap_dataset_xml_join.md
       - Customized GUTILS: gdp/customized_gutils.md
       - GDP Features: gdp/gdp_features.md
+      - Feature Sequential Diagram: gdp/feature_sequential_diagram.md
   - Glider Data Pipeline V2:
       - Overview: gdpv2/gdpv2.md
 
