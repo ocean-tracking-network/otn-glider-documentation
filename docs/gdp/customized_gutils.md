@@ -164,28 +164,28 @@ and performance.
 
 Proposed phases:
 
-1) Binary → ASCII conversion
+1. Binary → ASCII conversion
     - Replace `SlocumMerger.convert()` with `pyglider` equivalents (or keep ASCII‑free path if pyglider ingests binaries
       directly)
     - Maintain cache semantics (sensor selection) — decide on `pyglider`’s config approach; migrate `.cac` concept to
       YAML/JSON configs
     - Map GDP’s `settings.SLOCUM_SHARED_CACHE_DIR` to new config/cache handling
-2) ASCII/Raw → NetCDF creation
+2. ASCII/Raw → NetCDF creation
     - Adopt `pyglider`’s NetCDF writer configured to match current CF conventions and variables
     - Ensure metadata integration: feed GDP’s `META_JSON` (trajectory template, global attrs) into pyglider’s config
     - Preserve filters: distance, time, points, z, tsint — implement in pre‑writer transforms or in pyglider pipeline
-3) Reader and filters
+3. Reader and filters
     - Retire `CEOTRSlocumReader`/GUTILS filters gradually; build adapter functions that forward GDP CLI options into
       pyglider config
-4) ERDDAP layer
+4. ERDDAP layer
     - Keep as‑is; only NetCDF file conventions/locations must remain compatible
-5) Backward compatibility & rollout
+5. Backward compatibility & rollout
     - Golden‑file tests: select representative missions; diff current `.nc` vs pyglider `.nc` (variables, attrs, dims,
       checksums where feasible)
     - Performance tests: wall‑clock and memory profile on typical/large missions
     - Staged deployment: feature flag to switch engines; dry‑run mode to compare artifacts without publishing
 
-Feature parity & risks:
+Feature parity and risks:
 
 - Sensor mapping differences: pyglider channel names or QC logic may differ from GUTILS_mod — reconcile via config
 - CF conventions: ensure identical `standard_name`, `units`, `long_name`, fill values, `Conventions`, and global history
