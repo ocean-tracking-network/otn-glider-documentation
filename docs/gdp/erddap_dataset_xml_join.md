@@ -139,25 +139,25 @@ Suggested stack:
 
 High‑level algorithm in Python:
 
-1) Load `start.xml` and `end.xml` as ElementTrees or as raw text wrappers.
-2) Enumerate all individual `*.xml` in `datasets_dir`; sort deterministically; insert `0users.xml` first if present.
-3) For each file:
+1. Load `start.xml` and `end.xml` as ElementTrees or as raw text wrappers.
+2. Enumerate all individual `*.xml` in `datasets_dir`; sort deterministically; insert `0users.xml` first if present.
+3. For each file:
     - Parse and validate (well‑formedness + optional schema rules).
     - Strip XML declaration if present.
     - Optionally normalize indentation/attributes.
     - Append its `<dataset>` (or relevant nodes) into the main in‑memory tree.
-4) Apply normalization rules programmatically:
+4. Apply normalization rules programmatically:
     - Ensure `cdm_timeseries_variables` includes required ids depending on `cdm_data_type`.
     - If `trajectory` exists, set `cf_role=trajectory_id` and ensure it’s included in `cdm_trajectory_variables`.
     - Prefer targeted XPath edits (e.g., only for datasets with `cdm_data_type=TrajectoryProfile`).
-5) Token substitutions:
+      5.Token substitutions:
     - Read `datasets.ini` as `lhs rhs` pairs (allow quoting); apply to specific attributes via XPath rather than global
       regex when possible.
     - If global text replace is still needed (e.g., path roots), document exact scope and escape regex metacharacters
       safely.
-6) Write to `datasets.xml.saf` and then atomically to `datasets.xml` (use `tempfile` + `os.replace`).
-7) Compute and write diffs to `diffs.log` (optionally only for changed sections).
-8) Exit non‑zero if any invalid XMLs were encountered (collect a list and write `skipped_xml.log`).
+6. Write to `datasets.xml.saf` and then atomically to `datasets.xml` (use `tempfile` + `os.replace`).
+7. Compute and write diffs to `diffs.log` (optionally only for changed sections).
+8. Exit non‑zero if any invalid XMLs were encountered (collect a list and write `skipped_xml.log`).
 
 Optional improvements:
 
