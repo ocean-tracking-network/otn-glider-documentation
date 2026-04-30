@@ -294,7 +294,7 @@ sequenceDiagram
 
 ---
 
-### Mermaid: Model–Component Interaction Map
+### Model–Component Interaction Map
 
 ```mermaid
 flowchart TB
@@ -302,7 +302,6 @@ flowchart TB
 
     subgraph GDP["Glider Data Pipeline"]
         direction TB
-
         PM["GliderPipelineManager"]
 
         subgraph Builders["Pipeline Builders"]
@@ -328,28 +327,21 @@ flowchart TB
         SLK[("Slack")]
     end
 
-    ST -->|"sync missions"| PM
-
-    PM -->|"orchestrates"| B1
-    PM -->|"orchestrates"| B2
-    PM -->|"orchestrates"| B3
-
-    PM -->|"creates / updates"| M
-
-    B1 -->|"creates dirs"| PD
-    B1 -->|"registers files"| PF
-
-    B2 -->|"reads / updates files"| PF
-    ENG -.->|"converts binary / ASCII"| B2
-
-    B3 -->|"reads ERDDAP config / NC files"| PF
-    B3 -->|"publishes data"| ERD
-    B3 -->|"notifies"| SLK
-
+    ST -->|" sync missions "| PM
+    PM -->|" orchestrates "| B1
+    PM -->|" orchestrates "| B2
+    PM -->|" orchestrates "| B3
+    PM -->|" creates / updates "| M
+    B1 -->|" creates dirs "| PD
+    B1 -->|" registers files "| PF
+    B2 -->|" reads / updates files "| PF
+    ENG -.->|" converts binary / ASCII "| B2
+    B3 -->|" reads ERDDAP config / NC files "| PF
+    B3 -->|" publishes data "| ERD
+    B3 -->|" notifies "| SLK
     M --> MP
     M --> PD
     M --> PF
-
     class PM manager;
     class B1,B2,B3 builder;
     class M,MP,PD,PF model;
