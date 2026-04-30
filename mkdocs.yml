@@ -23,6 +23,7 @@ nav:
       - Overview: gdp/gdp.md
       - Class Diagram: gdp/overall_class_diagram.md
       - Pre-processing: gdp/pre_processing.md
+      - Core-processing: gdp/core_processing.md
 
 plugins:
   - search
