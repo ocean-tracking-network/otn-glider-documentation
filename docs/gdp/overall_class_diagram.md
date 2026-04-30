@@ -2,7 +2,7 @@
 title: Overall Class Diagram
 ---
 
-### Mermaid Class/Object Diagram — Key Relationships
+### Class/Object Diagram — Key Relationships
 
 Below is a `classDiagram` capturing the core classes, inheritance, and the most important associations across
 the Glider Data Pipeline (GDP). It focuses on orchestration (manager → builders → runners), mission assembly, process
