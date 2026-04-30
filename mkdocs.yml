@@ -25,7 +25,8 @@ nav:
       - Pre-processing: gdp/pre_processing.md
       - Core-processing: gdp/core_processing.md
       - Post-processing: gdp/post_processing.md
-      - Real-time Processing: gdp/real-time_flow.md
+      - Real-time Mission Flow: gdp/real-time_flow.md
+      - Delayed Mission Flow: gdp/delayed_flow.md
 
 plugins:
   - search

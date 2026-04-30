@@ -1,8 +1,7 @@
 ### Real‑Time Mode Data Processing — End‑to‑End Flow (GDP)
 
 This document explains the real‑time processing mode in the Glider Data Pipeline (GDP) from command invocation to ERDDAP
-publication. It details the steps, classes, inputs/outputs, idempotency, and error handling. Mermaid diagrams are
-included for GitHub Pages.
+publication. It details the steps, classes, inputs/outputs, idempotency, and error handling.
 
 ---
 
