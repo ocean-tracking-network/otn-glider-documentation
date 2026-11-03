@@ -16,9 +16,8 @@ theme:
 
 nav:
   - Home: index.md
-  - How-to Guides:
-      - How to generate an SSH key pair: how/ssh-key.md
-      - How to clone a GitLab repository with SSH: how/gitlab-repo-ssh.md
+  - Sensor Tracker:
+      - Overview: sensor-tracker/index.md
   - Glider Data Pipeline V1:
       - Overview: gdp/gdp.md
       - Class Diagram: gdp/overall_class_diagram.md
@@ -36,6 +35,8 @@ nav:
       - Feature Sequential Diagram: gdp/feature_sequential_diagram.md
   - Glider Data Pipeline V2:
       - Overview: gdpv2/gdpv2.md
+  - Rundeck Glider Jobs:
+      - Overview: glider-rundeck/index.md
 
 plugins:
   - search

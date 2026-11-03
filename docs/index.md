@@ -1,31 +1,23 @@
----
-title: Home
----
-
 # OTN Glider Documentation
 
-Welcome to the OTN Glider Documentation site. Use the navigation to explore how-to guides and the Glider Data Pipeline overview.
+This site documents the systems, components, and workflows that support glider data management at the Ocean Tracking
+Network (OTN), from mission metadata and raw data acquisition to processing, storage, and publication.
 
-## Quick start
+- **[Sensor Tracker](sensor-tracker/index.md)** manages information about glider platforms, deployments, instruments,
+  sensors, and measured parameters, providing metadata to downstream services through its API.
+- The **[Glider Data Pipeline (GDP)](gdp/gdp.md)** coordinates mission-based processing of Slocum glider data,
+  integrating metadata with raw observations to generate NetCDF data products and the corresponding configurations for
+  publication through **ERDDAP**.
+- **[Rundeck Glider Jobs](glider-rundeck/index.md)** automate and coordinate operational workflows across the glider
+  data infrastructure, including
+  data transfers, synchronization, pipeline-related tasks, and routine system maintenance.
 
-- Edit content in the `docs/` folder
-- Run locally: `mkdocs serve`
+The documentation also covers supporting infrastructure and services, including data fetchers, automated workflows
+orchestrated through Rundeck, processing databases, file storage, and ERDDAP deployment. Together, these components
+support the ingestion, processing, management, and dissemination of glider observations.
 
-## Diagrams (Mermaid)
+## The Glider Data Flow
 
-```mermaid
-flowchart LR
-  A[Raw Glider Data] --> B[Ingest]
-  B --> C[Process]
-  C --> D[Publish]
-```
+[![Glider data flow from mission metadata and raw files through processing to ERDDAP publication](imgs/glider-data-flow-mermaid.png){ width="720" style="max-width: 100%; height: auto;" }](imgs/glider-data-flow-mermaid.png)
 
-## Math (MathJax)
-
-Inline example: $e^{i\pi} + 1 = 0$.
-
-Block example:
-
-$$
-\nabla \cdot \vec{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}
-$$
+(Open the diagram to view it at full resolution.)
