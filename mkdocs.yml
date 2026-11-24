@@ -35,13 +35,17 @@ nav:
       - Feature Sequential Diagram: gdp/feature_sequential_diagram.md
   - Glider Data Pipeline V2:
       - Overview: gdpv2/gdpv2.md
-  - Rundeck Glider Jobs:
-      - Overview: glider-rundeck/index.md
+      - Data products: gdpv2/data-products.md
+      - Processing lifecycle: gdpv2/processing-lifecycle.md
+      - Architecture: gdpv2/architecture.md
+  - WGMS Retrieval:
+      - Overview: wgms-retrieval/index.md
+      - Report files: wgms-retrieval/report-files.md
+      - Retrieval and review lifecycle: wgms-retrieval/retrieval-review-lifecycle.md
+      - Architecture: wgms-retrieval/architecture.md
 
 plugins:
   - search
-  - mermaid2:
-      version: 11.10.1
 
 markdown_extensions:
   - admonition
@@ -53,6 +57,11 @@ markdown_extensions:
   - def_list
   - pymdownx.details
   - pymdownx.emoji
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.arithmatex:

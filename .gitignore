@@ -10,3 +10,6 @@ venv/
 # macOS
 .DS_Store
 .idea
+
+# Local-only internal documentation
+internal-docs/

@@ -8,12 +8,9 @@ Network (OTN), from mission metadata and raw data acquisition to processing, sto
 - The **[Glider Data Pipeline (GDP)](gdp/gdp.md)** coordinates mission-based processing of Slocum glider data,
   integrating metadata with raw observations to generate NetCDF data products and the corresponding configurations for
   publication through **ERDDAP**.
-- **[Rundeck Glider Jobs](glider-rundeck/index.md)** automate and coordinate operational workflows across the glider
-  data infrastructure, including
-  data transfers, synchronization, pipeline-related tasks, and routine system maintenance.
 
-The documentation also covers supporting infrastructure and services, including data fetchers, automated workflows
-orchestrated through Rundeck, processing databases, file storage, and ERDDAP deployment. Together, these components
+The documentation also covers supporting infrastructure and services, including data fetchers, processing databases,
+file storage, and ERDDAP deployment. Together, these components
 support the ingestion, processing, management, and dissemination of glider observations.
 
 ## The Glider Data Flow
