@@ -1,7 +1,7 @@
 site_name: OTN Glider Documentation
-site_url: https://<org>.github.io/<repo>/
+site_url: https://ocean-tracking-network.github.io/otn-glider-documentation/
 
-repo_url: https://github.com/<org>/<repo>
+repo_url: https://github.com/ocean-tracking-network/otn-glider-documentation
 edit_uri: edit/main/docs/
 
 theme:

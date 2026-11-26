@@ -2,6 +2,8 @@
 
 This repository hosts documentation built with MkDocs and the Material for MkDocs theme.
 
+Documentation: [otn-glider-documentation](https://ocean-tracking-network.github.io/otn-glider-documentation/)
+
 Getting started
 
 - Prerequisites: Python 3.9+ and pip
