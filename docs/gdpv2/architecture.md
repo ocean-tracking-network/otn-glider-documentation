@@ -125,12 +125,12 @@ The optional `--db_create` and `--db_summary` path uses a separate deployment-su
 
 ## Where to look in the code
 
-| Source | Responsibility |
-| --- | --- |
-| `runner.py` and `GDP/workflow.py` | CLI selection, workflow wiring, stage order, and optional publication. |
-| `GDP/slocum/metadata.py`, `GDP/slocum/converter.py`, and `GDP/slocum/deployment_runner.py` | Sensor Tracker metadata, YAML output, and per-deployment error handling. |
+| Source | Responsibility                                                                                |
+| --- |-----------------------------------------------------------------------------------------------|
+| `runner.py` and `GDP/workflow.py` | CLI selection, workflow wiring, stage order, and optional publication.                        |
+| `GDP/slocum/metadata.py`, `GDP/slocum/converter.py`, and `GDP/slocum/deployment_runner.py` | Sensor Tracker metadata, YAML output, and per-deployment error handling.                      |
 | `GDP/slocum/netcdf_generation/` | Raw-file selection, conversion scope, `pyglider` conversion, and deployment-window filtering. |
-| `GDP/processing_state/` | Conversion decisions, source snapshots, run and stage records, and SQLite storage. |
-| `GDP/quality_control/` and `GDP/slocum/profile_generation/` | Reporting diagnostics, profile extraction, and profile artifact tracking. |
-| `GDP/slocum/publication_preparation.py` and `GDP/erddap/` | Publication layouts, NetCDF copying, XML generation, and reload signals. |
-| `GDP/deployment_summary/` | Optional, separate deployment-summary storage. |
+| `GDP/processing_state/` | Conversion decisions, source snapshots, run and stage records, and SQLite storage.            |
+| `GDP/quality_control/` and `GDP/slocum/profile_generation/` | Reporting diagnostics, profile extraction, and profile artifact tracking.                     |
+| `GDP/slocum/publication_preparation.py` and `GDP/erddap/` | Publication layouts, NetCDF copying, XML generation, and reload signals.                      |
+| `GDP/deployment_summary/` | Separate deployment-summary storage.                                                          |
