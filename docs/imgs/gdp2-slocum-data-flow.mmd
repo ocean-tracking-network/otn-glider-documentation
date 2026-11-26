@@ -1,0 +1,82 @@
+flowchart TB
+    subgraph sources["Data Sources"]
+        tracker["Sensor Tracker<br/>deployment metadata"]
+        realtime["Local realtime raw files<br/>complete SBD / TBD pairs"]
+        delayed["Local delayed raw files<br/>DBD / EBD"]
+    end
+
+    subgraph processing["Data Processing"]
+        buildYaml["Build deployment.yml"]
+        yaml["deployment.yml"]
+        selectRaw["Select eligible binary files<br/>using deployment mode"]
+        selected["Selected source files"]
+        decision{"Convert, reuse<br/>or defer?"}
+        convert["Stage binary files<br/>Convert with pyglider<br/>Filter to deployment window"]
+        reuse["Verify saved YAML and NetCDF<br/>Reuse time-series file"]
+        defer["Defer this attempt<br/>No new NetCDF"]
+        timeseries["Time-series NetCDF<br/>deployment or realtime batch"]
+        state[(Processing state<br/>source snapshots, runs,<br/>stages and artifacts)]
+
+        buildYaml --> yaml
+        yaml -->|Processing requested| selectRaw
+        selectRaw --> selected --> decision
+        selected -.-> state
+        state -.-> decision
+        decision -->|Convert| convert --> timeseries
+        decision -->|Reuse| reuse --> timeseries
+        decision -->|Defer| defer
+    end
+
+    tracker --> buildYaml
+    realtime --> selectRaw
+    delayed --> selectRaw
+
+    diagnostics["Run enabled depth and position<br/>diagnostics, reporting only"]
+    timeseries --> diagnostics
+
+    subgraph preparation["Publication Preparation"]
+        layout{"Publication<br/>layout?"}
+        profilePrep["Extract or reuse profile NetCDF<br/>and select eligible files"]
+        missionPrep["Use deployment time-series NetCDF<br/>for delayed mission layout"]
+        profileFiles["Eligible profile NetCDF files"]
+        missionFile["Eligible delayed mission NetCDF file"]
+
+        layout -->|Profile| profilePrep --> profileFiles
+        layout -->|Configured delayed mission| missionPrep --> missionFile
+    end
+
+    diagnostics --> layout
+
+    subgraph publication["Optional ERDDAP Update"]
+        copy["Copy changed eligible NetCDF files"]
+        hostFiles["NetCDF files on configured host path"]
+        catalog["Generate XML fragment<br/>and assemble datasets.xml"]
+        catalogFile["datasets.xml"]
+        reload["Request ERDDAP reload<br/>if changed or forced"]
+        flag["Reload flag when needed"]
+
+        copy --> hostFiles
+        copy --> catalog
+        catalog --> catalogFile
+        catalog --> reload --> flag
+    end
+
+    profileFiles -. If publishing .-> copy
+    missionFile -. If publishing .-> copy
+
+    classDef source fill:#e6eaf7,stroke:#b6c5e1,color:#111;
+    classDef action fill:#f7f7f8,stroke:#d9e0e6,color:#111;
+    classDef file fill:#fff5df,stroke:#ebd29c,color:#111;
+    classDef output fill:#eaf2dc,stroke:#bed49d,color:#111;
+    classDef status fill:#eee8f3,stroke:#d6c5e0,color:#111;
+
+    class tracker,realtime,delayed source;
+    class buildYaml,selectRaw,convert,reuse,defer,diagnostics,profilePrep,missionPrep,copy,catalog action;
+    class yaml,selected,timeseries,profileFiles,missionFile file;
+    class hostFiles,catalogFile,flag output;
+    class decision,state,layout,reload status;
+
+    style sources fill:#f5eff8,stroke:#d5c2df,color:#111;
+    style processing fill:#f1fbf8,stroke:#9adacc,color:#111;
+    style preparation fill:#fff9e9,stroke:#ecd49a,color:#111;
+    style publication fill:#fff8f1,stroke:#efc9a7,color:#111;

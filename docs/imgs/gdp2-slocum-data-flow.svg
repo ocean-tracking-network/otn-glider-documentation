@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1975" viewBox="0 0 1200 1975" role="img" aria-labelledby="title desc">
+<title id="title">GDP2 Slocum data flow</title>
+<desc id="desc">Sensor Tracker metadata and selected Slocum binary files feed GDP2 conversion or reuse. A time-series NetCDF proceeds through diagnostics and profile or delayed mission file preparation. Optional ERDDAP publication copies files, assembles datasets.xml, and requests reload when needed.</desc>
+<defs>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#5d6872"/></marker>
+<marker id="arrow-dashed" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#927ca1"/></marker>
+</defs>
+<rect x="0" y="0" width="1200" height="1975" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="0"/>
+<text x="600" y="57.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#1f2933">GDP2 Slocum data flow</text>
+<text x="600" y="88.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#52606d">Selected processing steps and optional ERDDAP update</text>
+<rect x="45" y="115" width="1110" height="195" rx="20" fill="#f5eff8" stroke="#d5c2df" stroke-width="2"/>
+<rect x="45" y="350" width="1110" height="810" rx="20" fill="#f1fbf8" stroke="#9adacc" stroke-width="2"/>
+<rect x="45" y="1300" width="1110" height="255" rx="20" fill="#fff9e9" stroke="#ecd49a" stroke-width="2"/>
+<rect x="45" y="1595" width="1110" height="290" rx="20" fill="#fff8f1" stroke="#efc9a7" stroke-width="2"/>
+<path d="M232 268 V435" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M598 268 V324 H755 V520" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M962 268 V520" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M242 510 V540" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M395 575 H575 V560 H600" fill="none" stroke="#927ca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow-dashed)"/>
+<path d="M835 600 V640" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M835 705 L695 775" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M990 672 H1040 V750 L990 765" fill="none" stroke="#927ca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow-dashed)"/>
+<path d="M830 820 H650" fill="none" stroke="#927ca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow-dashed)"/>
+<path d="M470 840 L247 915 V930" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M545 865 V930" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M620 840 L953 915 V930" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M247 1025 V1040 H500 V1060" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M600 1025 V1060" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M600 1125 V1190" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M505 1260 V1360 H315 V1390" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M695 1260 V1360 H885 V1390" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M315 1460 V1480" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M885 1460 V1480" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M315 1530 V1560 H600" fill="none" stroke="#927ca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M885 1530 V1560 H600" fill="none" stroke="#927ca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M600 1560 V1650 H235 V1680" fill="none" stroke="#927ca1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow-dashed)"/>
+<path d="M385 1720 H450" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M750 1720 H815" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M235 1760 V1785" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M600 1760 V1785" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M965 1760 V1785" fill="none" stroke="#5d6872" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="600" y="153.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" fill="#1f2933">Data Sources</text>
+<text x="600" y="389.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" fill="#1f2933">Data Processing</text>
+<text x="290" y="1340.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" fill="#1f2933">Publication Preparation</text>
+<text x="860" y="1340.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#6b5e45">Runs with processing, without requiring publication</text>
+<text x="300" y="1628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" fill="#1f2933">Optional ERDDAP Update</text>
+<text x="960" y="1628.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#745744">Only when publication is requested</text>
+<rect x="80" y="177" width="305" height="91" rx="14" fill="#e6eaf7" stroke="#b6c5e1" stroke-width="2"/>
+<text x="232.5" y="217.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">Sensor Tracker</text>
+<text x="232.5" y="242.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">deployment metadata</text>
+<rect x="445" y="177" width="305" height="91" rx="14" fill="#e6eaf7" stroke="#b6c5e1" stroke-width="2"/>
+<text x="597.5" y="217.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">Local realtime raw files</text>
+<text x="597.5" y="242.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">complete SBD / TBD pairs</text>
+<rect x="810" y="177" width="305" height="91" rx="14" fill="#e6eaf7" stroke="#b6c5e1" stroke-width="2"/>
+<text x="962.5" y="217.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">Local delayed raw files</text>
+<text x="962.5" y="242.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">DBD / EBD</text>
+<rect x="90" y="435" width="305" height="75" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="242.5" y="479.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">Build deployment.yml</text>
+<rect x="90" y="540" width="305" height="70" rx="14" fill="#fff5df" stroke="#ebd29c" stroke-width="2"/>
+<text x="242.5" y="582.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1f2933">deployment.yml</text>
+<rect x="600" y="520" width="470" height="80" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="835.0" y="554.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">Select eligible binary files</text>
+<text x="835.0" y="579.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">using deployment mode</text>
+<rect x="680" y="640" width="310" height="65" rx="14" fill="#fff5df" stroke="#ebd29c" stroke-width="2"/>
+<text x="835.0" y="679.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">Selected source files</text>
+<polygon points="545,735 695,800 545,865 395,800" fill="#eee8f3" stroke="#d6c5e0" stroke-width="2"/>
+<text x="545" y="793.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600" fill="#1f2933">Convert, reuse</text>
+<text x="545" y="820.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600" fill="#1f2933">or defer?</text>
+<path d="M830 783 C830 773 1090 773 1090 783 L1090 862 C1090 872 830 872 830 862 Z" fill="#eee8f3" stroke="#d6c5e0" stroke-width="2"/>
+<ellipse cx="960" cy="783" rx="130" ry="14" fill="#eee8f3" stroke="#d6c5e0" stroke-width="2"/>
+<path d="M830 862 C830 872 1090 872 1090 862" fill="none" stroke="#d6c5e0" stroke-width="2"/>
+<text x="960" y="806.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1f2933">Processing state</text>
+<text x="960" y="829.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1f2933">snapshots · runs</text>
+<text x="960" y="851.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1f2933">stages · artifacts</text>
+<text x="347" y="902.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#52606d">Convert</text>
+<text x="600" y="902.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#52606d">Reuse</text>
+<text x="795" y="902.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#52606d">Defer</text>
+<rect x="95" y="930" width="305" height="95" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="247.5" y="960.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Stage binary files</text>
+<text x="247.5" y="984.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Convert with pyglider</text>
+<text x="247.5" y="1008.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Filter to deployment window</text>
+<rect x="448" y="930" width="305" height="95" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="600.5" y="972.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Verify saved YAML and NetCDF</text>
+<text x="600.5" y="996.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Reuse time-series file</text>
+<rect x="801" y="930" width="305" height="95" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="953.5" y="972.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Defer this attempt</text>
+<text x="953.5" y="996.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">No new NetCDF</text>
+<rect x="380" y="1060" width="440" height="65" rx="14" fill="#fff5df" stroke="#ebd29c" stroke-width="2"/>
+<text x="600.0" y="1087.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Time-series NetCDF</text>
+<text x="600.0" y="1111.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">(deployment or realtime batch)</text>
+<rect x="390" y="1190" width="420" height="70" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="600.0" y="1220.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Enabled depth and position diagnostics</text>
+<text x="600.0" y="1243.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">(reporting only)</text>
+<text x="340" y="1377.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#6b5e45">Profile layout</text>
+<text x="852" y="1377.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#6b5e45">Configured delayed mission layout</text>
+<rect x="100" y="1390" width="430" height="70" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="315.0" y="1420.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Extract or reuse profile NetCDF</text>
+<text x="315.0" y="1443.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">and select eligible files</text>
+<rect x="670" y="1390" width="430" height="70" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="885.0" y="1420.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Use deployment time-series NetCDF</text>
+<text x="885.0" y="1443.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">for delayed mission layout</text>
+<rect x="100" y="1480" width="430" height="50" rx="14" fill="#fff5df" stroke="#ebd29c" stroke-width="2"/>
+<text x="315.0" y="1512.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Eligible profile NetCDF files</text>
+<rect x="670" y="1480" width="430" height="50" rx="14" fill="#fff5df" stroke="#ebd29c" stroke-width="2"/>
+<text x="885.0" y="1512.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Eligible delayed mission NetCDF file</text>
+<rect x="85" y="1680" width="300" height="80" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="235.0" y="1715.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Copy changed eligible</text>
+<text x="235.0" y="1738.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">NetCDF files</text>
+<rect x="450" y="1680" width="300" height="80" rx="14" fill="#f7f7f8" stroke="#d9e0e6" stroke-width="2"/>
+<text x="600.0" y="1715.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Generate XML fragment</text>
+<text x="600.0" y="1738.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">and assemble datasets.xml</text>
+<rect x="815" y="1680" width="300" height="80" rx="14" fill="#eee8f3" stroke="#d6c5e0" stroke-width="2"/>
+<text x="965.0" y="1715.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Request ERDDAP reload</text>
+<text x="965.0" y="1738.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">if changed or forced</text>
+<rect x="85" y="1785" width="300" height="65" rx="14" fill="#eaf2dc" stroke="#bed49d" stroke-width="2"/>
+<text x="235.0" y="1812.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">NetCDF files on</text>
+<text x="235.0" y="1836.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">configured host path</text>
+<rect x="450" y="1785" width="300" height="65" rx="14" fill="#eaf2dc" stroke="#bed49d" stroke-width="2"/>
+<text x="600.0" y="1824.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1f2933">datasets.xml</text>
+<rect x="815" y="1785" width="300" height="65" rx="14" fill="#eaf2dc" stroke="#bed49d" stroke-width="2"/>
+<text x="965.0" y="1824.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1f2933">Reload flag when needed</text>
+<text x="600" y="1923.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52606d">A metadata-only run skips raw conversion. Realtime profile selection withholds the newest profile.</text>
+<text x="600" y="1951.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52606d">A reload request does not verify that ERDDAP is serving the dataset.</text>
+</svg>
